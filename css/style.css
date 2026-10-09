@@ -4,18 +4,19 @@
 
 :root {
   /* Основные цвета проекта */
-  --color-bg: #ffffff;
-  --color-text: #222222;
-  --color-muted: #666666;
-  --color-primary: #0057b8;
-  --color-primary-dark: #003f86;
-  --color-border: #dddddd;
-  --color-surface: #f7f7f7;
-  --color-surface-accent: #eef5ff;
-  --color-danger: #b00020;
-  --color-success: #168a2f;
-  --color-success-bg: #eefaf0;
-  --color-white: #ffffff;
+  --color-bg: #F5F0FF;
+  --color-text: #1A1230;        
+  --color-muted: #6B5B85;       
+  --color-primary: #7B2FFF;     
+  --color-primary-dark: #5A1FCC;
+  --color-border: #DCD0F0;
+  --color-surface: #FFFFFF;     
+  --color-surface-accent: #E9DDFF;
+  --color-danger: #D6336C;
+  --color-success: #2F9E5B;
+  --color-success-bg: #EAFBF0;
+  --color-white: #FFFFFF;
+
 
   /* Отступы */
   --space-xs: 4px;
@@ -59,7 +60,10 @@ footer {
 
 
 header {
-  background-color: var(--color-surface);
+  position: sticky;   
+  top: 0;
+  z-index: 100;
+  background: var(--color-surface);
 }
 
 footer {
@@ -116,7 +120,6 @@ a:focus-visible {
   list-style: none;
 }
 
-
 /*
   Добавляем расстояние между пунктами меню.
 */
@@ -136,6 +139,11 @@ a:focus-visible {
   color: var(--color-white);
   background-color: var(--color-primary);
 }
+.site-nav__logo a:hover {
+  background: transparent;
+  color: inherit;
+}
+
 
 
 /* ===============================
@@ -168,7 +176,7 @@ a:focus-visible {
   padding: var(--space-md);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  background-color: var(--color-bg);
+  background-color: var(--color-surface);
 }
 
 .product-card .button {
@@ -191,6 +199,11 @@ a:focus-visible {
   gap: var(--space-lg);
 }
 
+.map{
+  margin: 0 auto;
+  border: 0;
+  display: block;
+}
 
 .breadcrumbs {
   max-width: var(--container-width);
