@@ -1,22 +1,22 @@
 /* ===============================
-   1. Переменные проекта
+   1. Переменные проекта LoderShop
    =============================== */
 
 :root {
-  /* Основные цвета проекта */
-  --color-bg: #F5F0FF;
-  --color-text: #1A1230;        
-  --color-muted: #6B5B85;       
-  --color-primary: #7B2FFF;     
-  --color-primary-dark: #5A1FCC;
-  --color-border: #DCD0F0;
-  --color-surface: #FFFFFF;     
-  --color-surface-accent: #E9DDFF;
-  --color-danger: #D6336C;
-  --color-success: #2F9E5B;
-  --color-success-bg: #EAFBF0;
-  --color-white: #FFFFFF;
-
+  --color-bg: #faf9fc;
+  --color-text: #1a1625;
+  --color-muted: #5a5266;
+  --color-primary: #7b2cbf;
+  --color-primary-dark: #5a189a;
+  --color-primary-light: #c77dff;
+  --color-accent: #00f5d4;
+  --color-border: #e0d9eb;
+  --color-surface: #f3eef9;
+  --color-surface-accent: #ede4f7;
+  --color-danger: #d00000;
+  --color-success: #00a86b;
+  --color-success-bg: #e6f7f0;
+  --color-white: #ffffff;
 
   /* Отступы */
   --space-xs: 4px;
@@ -26,14 +26,13 @@
   --space-xl: 32px;
 
   /* Скругления */
-  --radius-sm: 6px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
 
   /* Размеры */
   --container-width: 1100px;
 }
-
 
 /* ===============================
    2. Базовые стили
@@ -45,12 +44,11 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  line-height: 1.5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
   color: var(--color-text);
   background-color: var(--color-bg);
 }
-
 
 header,
 main,
@@ -58,16 +56,19 @@ footer {
   padding: var(--space-lg);
 }
 
-
 header {
-  position: sticky;   
+  position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--color-surface);
+  background-color: var(--color-white);
+  box-shadow: 0 2px 10px rgba(123, 44, 191, 0.1);
 }
 
 footer {
   background-color: var(--color-surface);
+  color: var(--color-muted);
+  text-align: center;
+  border-top: 1px solid var(--color-border);
 }
 
 /* ===============================
@@ -76,6 +77,7 @@ footer {
 
 a {
   color: var(--color-primary);
+  transition: color 0.2s ease;
 }
 
 a:hover {
@@ -83,68 +85,62 @@ a:hover {
 }
 
 a:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 3px solid var(--color-primary);
   outline-offset: 3px;
 }
 
-
-/*
-  Ограничиваем ширину содержимого шапки,
-  чтобы оно не растягивалось слишком сильно на широких экранах.
-*/
 .site-header {
-  max-width: 1100px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  max-width: var(--container-width);
   margin: 0 auto;
 }
 
-/*
-  Оформляем текстовый логотип.
-*/
 .site-logo {
-  font-weight: bold;
+  font-weight: 800;
+  font-size: 1.5rem;
   text-decoration: none;
-  color: #222222;
+  color: var(--color-primary);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/*
-  Убираем стандартные отступы и маркеры списка навигации.
-*/
+
+
 .site-nav__list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: var(--space-md);
+  gap: var(--space-sm);
   padding: 0;
   margin: var(--space-md) 0 0;
   list-style: none;
 }
 
-/*
-  Добавляем расстояние между пунктами меню.
-*/
 .site-nav__list li {
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .site-nav__list a {
   display: inline-block;
   padding: var(--space-sm) var(--space-md);
-  color: var(--color-primary);
+  color: var(--color-text);
   text-decoration: none;
   border-radius: var(--radius-sm);
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
-.site-nav__list a:hover {
+.site-nav__list a:hover,
+.site-nav__list a[aria-current="page"] {
   color: var(--color-white);
   background-color: var(--color-primary);
 }
-.site-nav__logo a:hover {
-  background: transparent;
-  color: inherit;
-}
-
-
 
 /* ===============================
    4. Компоненты страницы
@@ -154,8 +150,46 @@ a:focus-visible {
   max-width: var(--container-width);
   margin: 0 auto var(--space-xl);
   padding: var(--space-xl) var(--space-lg);
-  background-color: var(--color-surface-accent);
+  background: linear-gradient(135deg, var(--color-surface-accent), var(--color-surface));
   border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: var(--color-primary-light);
+  opacity: 0.2;
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  color: var(--color-primary-dark);
+  margin-top: 0;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.2;
+}
+
+.hero__picture {
+  display: block;
+}
+
+.hero__image {
+  width: 100%;
+  border-radius: var(--radius-md);
+  display: block;
 }
 
 .section {
@@ -165,8 +199,11 @@ a:focus-visible {
 
 .section h2 {
   margin-top: 0;
+  color: var(--color-primary-dark);
+  border-bottom: 2px solid var(--color-primary-light);
+  padding-bottom: var(--space-sm);
+  display: inline-block;
 }
-
 
 .product-card {
   display: flex;
@@ -176,7 +213,28 @@ a:focus-visible {
   padding: var(--space-md);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.product-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(123, 44, 191, 0.15);
+}
+
+.product-card h3 {
+  margin-top: 0;
+  color: var(--color-primary-dark);
+}
+
+.product-card__image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
   background-color: var(--color-surface);
+  margin-bottom: var(--space-sm);
 }
 
 .product-card .button {
@@ -184,25 +242,10 @@ a:focus-visible {
   align-self: flex-start;
 }
 
-
-.product-card:hover {
-  border-color: var(--color-primary);
-}
-
-.product-card h3 {
-  margin-top: 0;
-}
-
 .products-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-lg);
-}
-
-.map{
-  margin: 0 auto;
-  border: 0;
-  display: block;
 }
 
 .breadcrumbs {
@@ -230,7 +273,6 @@ html {
   outline-offset: 4px;
 }
 
-
 .button {
   display: inline-block;
   padding: var(--space-sm) var(--space-md);
@@ -240,14 +282,22 @@ html {
   border: none;
   border-radius: var(--radius-sm);
   cursor: pointer;
+  font-weight: 600;
+  font-family: inherit;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .button:hover {
   background-color: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
+.button:active {
+  transform: scale(0.98);
 }
 
 .button:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 3px solid var(--color-accent);
   outline-offset: 3px;
 }
 
@@ -256,19 +306,13 @@ html {
   cursor: not-allowed;
 }
 
-
 .aside-info {
   max-width: var(--container-width);
   margin: 0 auto var(--space-xl);
   padding: var(--space-md);
-  border-left: 4px solid var(--color-primary);
+  border-left: 4px solid var(--color-accent);
   background-color: var(--color-surface);
-}
-
-
-
-.content inf{
-  flex: 1;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
 }
 
 .catalog-layout {
@@ -286,6 +330,7 @@ html {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background-color: var(--color-surface);
+  align-self: start;
 }
 
 .catalog-products {
@@ -302,15 +347,18 @@ html {
   padding: var(--space-md);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
+  background-color: var(--color-white);
 }
 
 .filters-form legend {
   font-weight: 700;
+  color: var(--color-primary-dark);
 }
 
 .filters-form label {
   display: block;
   margin-bottom: var(--space-sm);
+  cursor: pointer;
 }
 
 .filters-form input[type="number"] {
@@ -321,7 +369,6 @@ html {
   font: inherit;
 }
 
-
 /* ===============================
    5. Форма и модальное окно
    =============================== */
@@ -331,10 +378,17 @@ html {
   padding: var(--space-lg);
   border: none;
   border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px rgba(26, 22, 37, 0.4);
 }
 
 .order-dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(26, 22, 37, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.order-dialog h2 {
+  color: var(--color-primary-dark);
+  margin-top: 0;
 }
 
 .form-field {
@@ -344,6 +398,7 @@ html {
 .form-field label {
   display: block;
   margin-bottom: var(--space-xs);
+  font-weight: 500;
 }
 
 .form-field input,
@@ -354,6 +409,7 @@ html {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   font: inherit;
+  background-color: var(--color-white);
 }
 
 .form-field input[type="checkbox"] {
@@ -366,7 +422,6 @@ html {
   color: var(--color-muted);
 }
 
-
 .form-field input:hover,
 .form-field select:hover,
 .form-field textarea:hover {
@@ -377,18 +432,15 @@ html {
 .form-field select:focus-visible,
 .form-field textarea:focus-visible,
 .form-actions button:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 3px solid var(--color-primary);
   outline-offset: 3px;
 }
 
 [aria-invalid="true"] {
   border-color: var(--color-danger);
+  background-color: #fff5f5;
 }
 
-
-/*
-  Кнопки формы.
-*/
 .form-actions {
   display: flex;
   gap: 12px;
@@ -401,5 +453,5 @@ html {
   padding: var(--space-md);
   border-left: 4px solid var(--color-success);
   background-color: var(--color-success-bg);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
 }
-

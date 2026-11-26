@@ -3,36 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Контактная информация учебного интернет-магазина.">
-  <title>Контакты — Учебный интернет-магазин</title>
+  <meta name="description" content="Контактная информация LoderShop.">
+  <title>Контакты — LoderShop</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Учебный интернет-магазин">
-  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
-  <meta property="og:image" content="https://username.github.io/kr1-html-css-shop/images/preview.jpg">
-  <link rel="icon" type="image/png" href="image/LoderSHOP.png">
-  <link rel="preload" href="image/LoderSHOP.png" as="image">
+  <meta property="og:title" content="LoderShop — Контакты">
+  <meta property="og:description" content="Свяжитесь с LoderShop.">
+  <meta property="og:image" content="https://loder-glitch.github.io/kr3-responsive-shop/images/preview.jpg">
 </head>
 <body>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
   <header>
     <div class="site-header">
-      <a class="site-logo" href="index.html"></a>
+      <a class="site-logo" href="index.html" aria-label="LoderShop — на главную">
+        <img src="image/LoderSHOP.png" alt="LoderShop" class="site-logo__image" width="110" height="32">
+      </a>
+
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-          <ul href="index.html"><img src="image/LoderSHOP.png" alt="Логотип магазина" width="120" height="120"></ul>          
           <li><a href="index.html">Главная</a></li>
           <li><a href="catalog.html">Каталог</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-          <li><a href="index.html#advantages">Преимущества</a></li>
-          <li><a href="index.html#popular">Популярные товары</a></li>
-          <li><a href="index.html#contacts">Обратная связь</a></li>
+          <li><a href="product.html">Товар</a></li>
+          <li><a href="order.html">Заявка</a></li>
+          <li><a href="contacts.html" aria-current="page">Контакты</a></li>
         </ul>
       </nav>
-
     </div>
   </header>
 
-  <main>
+  <main id="main" class="main">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a href="index.html">Главная</a>
       <span>Контакты</span>
@@ -41,12 +42,13 @@
     <section class="section">
       <h1>Контакты</h1>
       <p>
-        Здесь размещается контактная информация учебного интернет-магазина.
+        Свяжитесь с LoderShop удобным способом. Мы отвечаем на вопросы
+        о товарах, доставке и наличии.
       </p>
 
       <ul>
         <li>Телефон: +7 (900) 000-00-00</li>
-        <li>E-mail: info@example.com</li>
+        <li>E-mail: info@loder-shop.example</li>
         <li>Адрес: г. Москва, учебный проект</li>
       </ul>
     </section>
@@ -54,14 +56,14 @@
     <section class="section" id="feedback">
       <h2>Обратная связь</h2>
       <p>
-        Для отправки заявки используйте форму в модальном окне на главной странице.
+        Оставьте заявку через форму оформления заказа или напишите нам на e-mail.
       </p>
-      <a class="button" href="index.html#contacts">Перейти к форме</a>
+      <a class="button" href="order.html">Перейти к форме заявки</a>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+    <p>&copy; 2026 LoderShop. Учебный проект. Все права защищены.</p>
     <p>Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
 </body>

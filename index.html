@@ -3,217 +3,210 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Учебный интернет-магазин</title>
+  <meta name="description" content="LoderShop — учебный интернет-магазин аниме-атрибутики и катаны.">
+  <title>LoderShop — Учебный интернет-магазин</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
   <script src="js/main.js" defer></script>
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Учебный интернет-магазин">
-  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
-  <meta property="og:image" content="https://loder-glitch.github.io/kr1-html-css-shop/images/preview.jpg">
-  <link rel="icon" type="image/png" href="image/LoderSHOP.png">
-  <link rel="preload" href="image/LoderSHOP.png" as="image">
+  <meta property="og:title" content="LoderShop">
+  <meta property="og:description" content="Учебный frontend-проект интернет-магазина аниме-атрибутики.">
 </head>
 <body>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
   <header>
     <div class="site-header">
+      <a class="site-logo" href="index.html" aria-label="LoderShop — на главную">
+        <img src="image/LoderSHOP.png" alt="LoderShop" class="site-logo__image" width="110" height="32">
+      </a>
+
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-          <li class="site-nav__logo">
-            <a href="index.html"><img src="image/LoderSHOP.png" alt="Логотип магазина" width="120" height="120"></a>          
-          </li>
-          <li><a href="index.html">Главная</a></li>
+          <li><a href="index.html" aria-current="page">Главная</a></li>
           <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="product.html">Товар</a></li>
+          <li><a href="order.html">Заявка</a></li>
           <li><a href="contacts.html">Контакты</a></li>
-          <li><a href="index.html#advantages">Преимущества</a></li>
-          <li><a href="index.html#popular">Популярные товары</a></li>
-          <li><a href="index.html#contacts">Обратная связь</a></li>
         </ul>
       </nav>
-
     </div>
   </header>
 
-  <main>
+  <main id="main" class="main">
     <section class="hero">
-    <h1>Учебный интернет-магазин</h1>
-      <p>
-        Это стартовая страница учебного frontend-проекта.
-        В дальнейшем на её основе будет разработан многостраничный сайт
-        интернет-магазина или каталога услуг.
-      </p>
-      <a class="button" href="#popular">Перейти к товарам</a>
+      <div class="hero__content">
+        <h1>LoderShop — аниме-атрибутика и катаны</h1>
+        <p>
+          Учебный проект интернет-магазина. Здесь вы найдёте коллекционные катаны,
+          атрибутику и аксессуары в аниме-стиле. Проект создан в рамках дисциплины
+          «Фронтенд и бэкенд разработка».
+        </p>
+        <a class="button" href="#popular">Перейти к товарам</a>
+      </div>
+
+      <picture class="hero__picture">
+        <source media="(min-width: 1200px)" srcset="image/logo.png">
+        <source media="(min-width: 768px)" srcset="image/logo75.png">
+        <img
+          src="image/logo.png"
+          alt="Логотип LoderShop с аниме-персонажем и корзиной"
+          width="640"
+          height="640"
+          class="hero__image"
+          loading="lazy"
+        >
+      </picture>
     </section>
 
     <section class="section" id="advantages">
-    <h2>Преимущества проекта</h2>
-
-    <ul class="advantages-list">
-        <li>понятная HTML-структура;</li>
-        <li>семантические блоки страницы;</li>
-        <li>подключение внешнего CSS-файла;</li>
-        <li>подготовка к разработке многостраничного сайта.</li>
+      <h2>Преимущества LoderShop</h2>
+      <ul class="advantages-list">
+        <li>коллекционные катаны и аниме-атрибутика;</li>
+        <li>понятная HTML-структура и семантическая разметка;</li>
+        <li>адаптивная вёрстка под мобильные и desktop;</li>
+        <li>доступный интерфейс: фокус, контраст, alt, label.</li>
       </ul>
     </section>
 
     <section class="section" id="popular">
-  <h2>Популярные товары</h2>
+      <h2>Популярные товары</h2>
 
-  <div class="products-grid">
-    <article class="product-card">
-      <h3>Товар 1</h3>
-      <p>Краткое описание учебного товара.</p>
-      <p>Цена: 1000 руб.</p>
-      <button class="button product-card__button" type="button" data-product="Товар 1">
-        Заказать
-      </button>
-    </article>
+      <div class="products-grid">
+        <article class="product-card">
+          <img
+            src="image/товар1.jpg"
+            alt="Катана Шинобу — оранжевая рукоять и оранжевая гарда, с зелеными вкраплениями"
+            width="480"
+            height="480"
+            loading="lazy"
+            class="product-card__image"
+          >
+          <h3>Катана Шинобу</h3>
+          <p>Коллекционная катана с оранжевой рукоятью и оранжевой гардой, с зелеными вкраплениями.</p>
+          <p>Цена: 1000 руб.</p>
+          <button class="button product-card__button" type="button" data-product="Катана Шинобу">
+            Заказать
+          </button>
+        </article>
 
-    <article class="product-card">
-      <h3>Товар 2</h3>
-      <p>Краткое описание учебного товара.</p>
-      <p>Цена: 1500 руб.</p>
-      <button class="button product-card__button" type="button" data-product="Товар 2">
-        Заказать
-      </button>
-    </article>
+        <article class="product-card">
+          <img
+            src="image/товар2.jpg"
+            alt="Клинки Тэнгэна — парные мачете с цепью"
+            width="480"
+            height="480"
+            loading="lazy"
+            class="product-card__image"
+          >
+          <h3>Клинки Тэнгэна</h3>
+          <p>Парные клинки с цепью и подставкой в комплекте.</p>
+          <p>Цена: 1500 руб.</p>
+          <button class="button product-card__button" type="button" data-product="Клинки Тэнгэна">
+            Заказать
+          </button>
+        </article>
 
-    <article class="product-card">
-      <h3>Товар 3</h3>
-      <p>Краткое описание учебного товара.</p>
-      <p>Цена: 2000 руб.</p>
-      <button class="button product-card__button" type="button" data-product="Товар 3">
-        Заказать
-      </button>
-    </article>
-  </div>
-</section>
+        <article class="product-card">
+          <img
+            src="image/товар3.jpg"
+            alt="Катана Гию — голубое лезвие с красной гардой"
+            width="480"
+            height="480"
+            loading="lazy"
+            class="product-card__image"
+          >
+          <h3>Катана Гию</h3>
+          <p>Катана с голубым лезвием и красной гардой.</p>
+          <p>Цена: 2000 руб.</p>
+          <button class="button product-card__button" type="button" data-product="Катана Гию">
+            Заказать
+          </button>
+        </article>
+      </div>
+    </section>
 
-
-  
     <aside class="aside-info">
       <h2>Информация для студентов</h2>
       <p>
-        На следующих практических занятиях этот проект будет расширяться:
-        появятся формы, модальное окно, дополнительные страницы, Flex/Grid,
-        БЭМ-структура и адаптивная версия сайта.
+        LoderShop — учебный проект. На следующих занятиях появятся
+        JavaScript-интерактивность, DOM, события, формы и валидация (КР №4),
+        а затем компонентная разработка на React или Vue (КР №5).
       </p>
     </aside>
-    <div>
-      <aside class="aside-info">
-        <h2>Где нас найти?</h2>
-        <p>
-          МИРЭА - Российский технологический университет
-          просп. Вернадского, 78, стр. 4, Москва
-        </p>
-      </aside>
-      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A63d9fef6cee9a56260d262b09c03e90e4761a172cabf04490fd6225536ccfd81&amp;source=constructor" width="65%" height="400" frameborder="0" class="map"></iframe>
-      
-    </div>
   </main>
 
-
-
   <footer id="contacts">
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-  <p>Дисциплина: Фронтенд и бэкенд разработка</p>
-</footer>
+    <p>&copy; 2026 LoderShop. Учебный проект. Все права защищены.</p>
+    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  </footer>
 
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <h2 id="order-dialog-title">Оформление заявки</h2>
 
-<dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
-  <h2 id="order-dialog-title">Оформление заявки</h2>
+    <form class="order-form" id="order-form" action="#" method="post" novalidate>
+      <input id="selected-product" name="selected-product" type="hidden">
 
-  <form class="order-form" id="order-form" action="#" method="post" novalidate>
-    <input id="selected-product" name="selected-product" type="hidden">
+      <div class="form-field">
+        <label for="order-name">Имя</label>
+        <input id="order-name" name="name" type="text" placeholder="Введите ваше имя"
+               minlength="2" autocomplete="given-name" required>
+      </div>
 
-    <div class="form-field">
-      <label for="order-name">Имя</label>
-      <input
-        id="order-name"
-        name="name"
-        type="text"
-        placeholder="Введите ваше имя"
-        minlength="2"
-        autocomplete="given-name"
-        required
-      >
-    </div>
+      <div class="form-field">
+        <label for="order-email">E-mail</label>
+        <input id="order-email" name="email" type="email" placeholder="example@mail.ru"
+               autocomplete="email" required aria-describedby="order-email-error">
+        <p id="order-email-error" class="form-error" role="alert">
+          Введите корректный e-mail.
+        </p>
+      </div>
 
-    <div class="form-field">
-      <label for="order-email">E-mail</label>
-      <input
-        id="order-email"
-        name="email"
-        type="email"
-        placeholder="example@mail.ru"
-        autocomplete="email"
-        required
-      >
-    </div>
+      <div class="form-field">
+        <label for="order-phone">Телефон</label>
+        <input id="order-phone" name="phone" type="tel" inputmode="tel"
+               placeholder="+7 (900) 000-00-00"
+               pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
+        <small>Формат: +7 (900) 000-00-00</small>
+      </div>
 
-    <div class="form-field">
-      <label for="order-phone">Телефон</label>
-      <input
-        id="order-phone"
-        name="phone"
-        type="tel"
-        inputmode="tel"
-        placeholder="+7 (900) 000-00-00"
-        pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
-        required
-      >
-      <small>Формат: +7 (900) 000-00-00</small>
-    </div>
+      <div class="form-field">
+        <label for="order-date">Дата связи</label>
+        <input id="order-date" name="date" type="date">
+      </div>
 
-    <div class="form-field">
-      <label for="order-date">Дата связи</label>
-      <input
-        id="order-date"
-        name="date"
-        type="date"
-      >
-    </div>
+      <div class="form-field">
+        <label for="order-topic">Тема заявки</label>
+        <select id="order-topic" name="topic" required>
+          <option value="">Выберите тему</option>
+          <option value="product">Заказ товара</option>
+          <option value="consultation">Консультация</option>
+          <option value="delivery">Доставка</option>
+        </select>
+      </div>
 
-    <div class="form-field">
-      <label for="order-topic">Тема заявки</label>
-      <select id="order-topic" name="topic" required>
-        <option value="">Выберите тему</option>
-        <option value="product">Заказ товара</option>
-        <option value="consultation">Консультация</option>
-        <option value="delivery">Доставка</option>
-      </select>
-    </div>
+      <div class="form-field">
+        <label for="order-comment">Комментарий</label>
+        <textarea id="order-comment" name="comment" rows="4"
+                  placeholder="Укажите дополнительную информацию"></textarea>
+      </div>
 
-    <div class="form-field">
-      <label for="order-comment">Комментарий</label>
-      <textarea
-        id="order-comment"
-        name="comment"
-        rows="4"
-        placeholder="Укажите дополнительную информацию"
-      ></textarea>
-    </div>
+      <div class="form-field form-field--checkbox">
+        <label>
+          <input id="order-agreement" name="agreement" type="checkbox" required>
+          Я согласен на обработку данных
+        </label>
+      </div>
 
-    <div class="form-field form-field--checkbox">
-      <label>
-        <input
-          id="order-agreement"
-          name="agreement"
-          type="checkbox"
-          required
-        >
-        Я согласен на обработку данных
-      </label>
-    </div>
+      <div class="form-actions">
+        <button type="button" id="close-order-dialog" aria-label="Закрыть окно оформления заявки">Закрыть</button>
+        <button type="submit">Отправить заявку</button>
+      </div>
+    </form>
+  </dialog>
 
-    <div class="form-actions">
-      <button type="button" id="close-order-dialog">Закрыть</button>
-      <button type="submit">Отправить заявку</button>
-    </div>
-  </form>
-</dialog>
-
-<p class="success-message" id="success-message" hidden>
-  Форма успешно отправлена
-</p>
+  <p class="success-message" id="success-message" hidden>
+    Форма успешно отправлена
+  </p>
 </body>
 </html>
