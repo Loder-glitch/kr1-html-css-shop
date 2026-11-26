@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Оформление заявки в LoderShop.">
+  <title>Оформление заявки — LoderShop</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LoderShop — Оформление заявки">
+  <meta property="og:description" content="Оформите заявку на покупку катаны или аниме-атрибутики.">
+  <meta property="og:image" content="https://loder-glitch.github.io/kr3-responsive-shop/images/preview.jpg">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+  <header>
+    <div class="site-header">
+      <a class="site-logo" href="index.html" aria-label="LoderShop — на главную">
+        <img src="image/LoderSHOP.png" alt="LoderShop" class="site-logo__image" width="110" height="32">
+      </a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="product.html">Товар</a></li>
+          <li><a href="order.html" aria-current="page">Заявка</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="main">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a href="index.html">Главная</a>
+      <span>Заявка</span>
+    </nav>
+
+    <section class="section">
+      <h1>Оформление заявки</h1>
+      <p>Заполните форму, и мы свяжемся с вами для подтверждения заказа.</p>
+
+      <p class="form-note">Поля, отмеченные звёздочкой, обязательны для заполнения.</p>
+
+      <form class="order-form" action="#" method="post" novalidate>
+        <div class="form-field">
+          <label for="order-name">Имя *</label>
+          <input id="order-name" name="name" type="text" placeholder="Введите ваше имя"
+                 minlength="2" autocomplete="given-name" required>
+        </div>
+
+        <div class="form-field">
+          <label for="order-email">E-mail *</label>
+          <input id="order-email" name="email" type="email" placeholder="example@mail.ru"
+                 autocomplete="email" required>
+        </div>
+
+        <div class="form-field">
+          <label for="order-phone">Телефон *</label>
+          <input id="order-phone" name="phone" type="tel" inputmode="tel"
+                 placeholder="+7 (900) 000-00-00"
+                 pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
+          <small>Формат: +7 (900) 000-00-00</small>
+        </div>
+
+        <div class="form-field">
+          <label for="order-topic">Тема заявки *</label>
+          <select id="order-topic" name="topic" required>
+            <option value="">Выберите тему</option>
+            <option value="product">Заказ товара</option>
+            <option value="consultation">Консультация</option>
+            <option value="delivery">Доставка</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="order-comment">Комментарий</label>
+          <textarea id="order-comment" name="comment" rows="4"
+                    placeholder="Укажите дополнительную информацию"></textarea>
+        </div>
+
+        <div class="form-field form-field--checkbox">
+          <label>
+            <input id="order-agreement" name="agreement" type="checkbox" required>
+            Я согласен на обработку данных *
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="button">Отправить заявку</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 LoderShop. Учебный проект. Все права защищены.</p>
+    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  </footer>
+</body>
+</html>

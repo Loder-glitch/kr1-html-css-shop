@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "kr1-html-css-shop",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "kr1-html-css-shop"
+	}
+}
